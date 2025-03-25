@@ -44,7 +44,7 @@ const getOrdersForUsers = async (req, res) => {
 // Order Payment
 const orderPayment = async (req, res) => {
   try {
-    const frontendUrl = "http://localhost:5173";
+    const frontendUrl = "https://inffinite-ecommerce-frontend.vercel.app";
     const { orderId, items } = await req.body;
 
     // Create Line Items
