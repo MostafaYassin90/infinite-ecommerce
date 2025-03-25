@@ -22,6 +22,13 @@ const PlaceOrder = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!token) {
+      navigate("/cart");
+    }
+  }, [token]);
+
+
   // Collect Products Order
   const collectProductsOrder = () => {
     let productsData = [];

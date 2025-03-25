@@ -30,7 +30,7 @@ const ElectronicsSection = () => {
         <Carousel responsive={categoryResponsive}>
           {
             electronics_category.map((item) => (
-              <Link to={`/electronics/${item.category}`} key={item.id} className='mr-5 block bg-gray-white p-3 rounded-md text-center shadow-lg border border-gray-200 transition-all duration-300 hover:scale-105'>
+              <Link to={`/electronics/${item.category}`} onClick={() => { scrollTo(0, 0); }} key={item.id} className='mr-5 block bg-gray-white p-3 rounded-md text-center shadow-lg border border-gray-200 transition-all duration-300 hover:scale-105'>
                 <img src={item.images} alt='category-image' />
                 <p className='text-gray-700'>{item.title}</p>
               </Link>

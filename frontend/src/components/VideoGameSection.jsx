@@ -22,7 +22,6 @@ const VideoGameSection = () => {
   };
 
 
-
   // Get Video Games Products
   const getVideoGamesProducts = () => {
     const productData = allProducts.filter((product) => product.type === "Video games");
@@ -43,7 +42,7 @@ const VideoGameSection = () => {
         <div className='justify-center gap-5 hidden md:flex'>
           {
             videGameCategory.map((item) => (
-              <Link to={`/video-games/${item.category}`} key={item.id} className='w-[280px] transition-all duration-300 hover:scale-105 rounded-xl shadow-xl relative border p-5 pb-10 border-gray-300 text-center'>
+              <Link to={`/video-games/${item.category}`} onClick={() => { scrollTo(0, 0); }} key={item.id} className='w-[280px] transition-all duration-300 hover:scale-105 rounded-xl shadow-xl relative border p-5 pb-10 border-gray-300 text-center'>
                 <div className='border border-gray-300 rounded-full w-[225px] h-[225px] p-3 shadow-xl mx-auto flex justify-center items-center'>
                   <img src={item.images} alt='videogame-images' className='w-[70%] mx-auto' />
                 </div>

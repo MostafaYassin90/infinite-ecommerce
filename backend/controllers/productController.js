@@ -126,8 +126,9 @@ const deleteProduct = async (req, res) => {
   const { userDetails, productId } = await req.body;
   const user = await UserModel.findById(userDetails.id);
   const product = await ProductModel.findById(productId);
+  const comparePassword = await bcrypt.compare(process.env.ADMIN_PASSWORD, user.password);
   try {
-    if (user._id.toString() === product.userId) {
+    if (user._id.toString() === product.userId || user.email === process.env.ADMIN_EMAIL && comparePassword) {
       await ProductModel.findByIdAndDelete(productId);
       return res.status(200).json({ success: true, message: "Product Deleted Successfully." });
     } else {

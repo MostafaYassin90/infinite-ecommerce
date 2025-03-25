@@ -85,9 +85,9 @@ const SingleProduct = () => {
   };
 
   // Delete Review
-  const deleteReview = async (reviewId) => {
+  const deleteReview = async (reviewId, orderId) => {
     try {
-      const response = await axios.post(backend_url + "/api/review//delete-frontend", { reviewId: reviewId }, {
+      const response = await axios.post(backend_url + "/api/review//delete-frontend", { reviewId: reviewId, orderId: orderId }, {
         headers: { authorization: "Bearer " + token }
       });
       if (response.data.success) {
@@ -106,7 +106,7 @@ const SingleProduct = () => {
   }, [allProducts, productId]);
 
   return (
-    <div className='relative my-16 min-h-[70vh] px-[3vw] sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+    <div className='relative py-16 min-h-[70vh] px-[3vw] sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       {
         singleProduct
           ?
@@ -246,7 +246,7 @@ const SingleProduct = () => {
                           <p className='text-gray-700 text-[15px]'>{new Date(review.createdAt).toLocaleDateString()}</p>
                           <div className='flex items-center justify-end text-xl'>
                             <MdDelete className='text-xl cursor-pointer text-red-700 transition-all duration-300 hover:scale-105'
-                              onClick={() => { deleteReview(review._id); }}
+                              onClick={() => { deleteReview(review._id, singleProduct._id); }}
                             />
                           </div>
                         </div>
@@ -256,7 +256,6 @@ const SingleProduct = () => {
                 }
               </Carousel>
             </div>
-
             {/* Related Products */}
             <RelatedProducts category={singleProduct.category} singleProduct={singleProduct} />
           </>

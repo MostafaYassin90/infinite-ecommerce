@@ -12,6 +12,8 @@ const Fashion = () => {
   const [filterProducts, setFilterProducts] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
 
+  console.log(category);
+
   // Add Category 
   const addCategory = (value) => {
     if (productCategory.includes(value)) {

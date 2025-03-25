@@ -51,11 +51,6 @@ const Cart = () => {
     collectProductsCart();
   }, [cartItemsFashion, cartItems, allProducts]);
 
-  console.log(allProducts);
-  console.log(cartItemsFashion);
-  console.log(cartItems);
-  console.log(productsCart);
-
   return (
     <>
       {

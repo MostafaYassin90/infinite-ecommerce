@@ -34,7 +34,7 @@ const Electronics = () => {
   }, [allProducts, productCategory]);
 
   return (
-    <div className='my-10 flex-col sm-flex-row mx-[3vw] sm:px-[5vw] md:px-[7vw] lg:px-[9vw] flex gap-5 items-start'>
+    <div className='my-10 flex-col sm:flex-row mx-[3vw] sm:px-[5vw] md:px-[7vw] lg:px-[9vw] flex gap-5 items-start'>
       {/* Left Side */}
       <div className='w-full sm:w-[250px]'>
         <p className='text-xl font-semibold mb-5 ml-1 flex items-center cursor-pointer'
@@ -66,7 +66,7 @@ const Electronics = () => {
               <label htmlFor='camera' className="cursor-pointer">Camera</label>
             </div>
             <div className="flex items-center gap-2 text-gray-800">
-              <input type='checkbox' id='television' value={"Televisions"} onChange={(event) => { addCategory(event.target.value); }} checked={productCategory.includes("Television") ? true : false} className="cursor-pointer" />
+              <input type='checkbox' id='television' value={"Televisions"} onChange={(event) => { addCategory(event.target.value); }} checked={productCategory.includes("Televisions") ? true : false} className="cursor-pointer" />
               <label htmlFor='television' className="cursor-pointer">Television</label>
             </div>
             <div className="flex items-center gap-2 text-gray-800">

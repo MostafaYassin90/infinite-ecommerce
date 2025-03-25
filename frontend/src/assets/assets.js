@@ -1390,8 +1390,8 @@ export const fashionCategory = [
   },
   {
     id: "3",
-    title: "kids",
-    category: "kids",
+    title: "Kids",
+    category: "Kids",
     images: kids_Category
   },
 ];

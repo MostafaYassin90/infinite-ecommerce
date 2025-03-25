@@ -31,8 +31,6 @@ const Details = () => {
     getDetailsHandler();
   }, []);
 
-  console.log(details);
-
   return details ? (
     <div className='py-5 px-[3vw]'>
       <div className='grid grid-cols-auto gap-5'>
@@ -41,15 +39,14 @@ const Details = () => {
           details.usersCount &&
           <div className="border border-gray-300 p-5 rounded-md shadow-md flex items-center gap-5 transition-all duration-300 hover:scale-[1.05] hover:bg-blue-50 cursor-pointer">
             <LiaUsersSolid className='text-4xl text-primary' />
-            <p className="text-gray-700">Users: <span className="text-primary font-semibold text-[17px]">{details.usersCount}</span> </p>
+            <p className="text-gray-700">Users: <span className="text-primary font-semibold text-[17px]">{details.usersCount > 0 ? details.usersCount : "0"}</span> </p>
           </div>
         }
         {/* Products Count */}
         {
-          details.productsCount &&
           <div className="border border-gray-300 p-5 rounded-md shadow-md flex items-center gap-5 transition-all duration-300 hover:scale-[1.05] hover:bg-blue-50 cursor-pointer">
             <AiOutlineProduct className='text-4xl text-primary' />
-            <p className="text-gray-700">Products: <span className="text-primary font-semibold text-[17px]">{details.productsCount}</span> </p>
+            <p className="text-gray-700">Products: <span className="text-primary font-semibold text-[17px]">{details.productsCount > 0 ? details.productsCount : "0"}</span> </p>
           </div>
         }
         {/* Orders Count */}
@@ -62,13 +59,13 @@ const Details = () => {
         }
         {/* Reviews Count */}
         {
-          details.reviewsCount &&
+
           <div className="border border-gray-300 p-5 rounded-md shadow-md flex items-center gap-5 transition-all duration-300 hover:scale-[1.05] hover:bg-blue-50 cursor-pointer">
             <MdOutlineReviews className='text-4xl text-primary' />
             <p className="text-gray-700">Reviews: <span className="text-primary font-semibold text-[17px]">{details.reviewsCount}</span> </p>
           </div>
         }
-        {/* Reviews Count */}
+        {/* Orders Count */}
         {
           details.ordersProfit &&
           <div className="border border-gray-300 p-5 rounded-md shadow-md flex items-center gap-5 transition-all duration-300 hover:scale-[1.05] hover:bg-blue-50 cursor-pointer">

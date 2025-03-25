@@ -42,10 +42,10 @@ const TopNavbar = () => {
     <div className='relative py-5 px-[3vw] sm:px-[5vw] md:px-[7vw] lg:px-[9vw] border-b border-gray-300'>
       <div className='flex items-center justify-between gap-10'>
         {/* Logo */}
-        <div className='flex items-center text-3xl w-fit'>
+        <Link to={"/"} className='flex items-center text-3xl w-fit'>
           <VscAzure className='text-primary' />
           <p className='text-gray-800 font-semibold'>In<span className='text-primary'>F</span>inite</p>
-        </div>
+        </Link>
         {/* Search Bar */}
         <div className='hidden sm:block w-full relative h-[40px] rounded-full border border-gray-300 py-2 pl-5 pr-10'>
           <input type="text" placeholder='Search By Title ' className='w-full block outline-none' onChange={(event) => { setSearchValue(event.target.value); }} />

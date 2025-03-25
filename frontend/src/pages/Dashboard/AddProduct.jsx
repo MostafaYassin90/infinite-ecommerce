@@ -6,6 +6,7 @@ import axios from "axios";
 
 
 const AddProduct = () => {
+  const { getAllProducts } = useContext(AppContext);
   const [image1, setImage1] = useState("");
   const [image2, setImage2] = useState("");
   const [image3, setImage3] = useState("");
@@ -108,6 +109,7 @@ const AddProduct = () => {
         if (response.data.success) {
           toast.success(response.data.message);
           getAllProductsDashboard();
+          getAllProducts();
           setImage1("");
           setImage2("");
           setImage3("");

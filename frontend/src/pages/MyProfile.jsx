@@ -41,8 +41,8 @@ const MyProfile = () => {
       {
         user
           ?
-          <div className='w-full md:w-[600px] flex items-start gap-10 lg:w-[900px] mx-auto p-10 rounded-md bg-[#050a21]'>
-            <img src={user.image} alt='user-image' className='w-40 p-1 bg-gray-500 border border-white outline-primary rounded-full' />
+          <div className='w-full md:w-[600px] flex max-md:items-center flex-col md:flex-row items-start gap-3 md:gap-10 lg:w-[900px] mx-auto p-10 rounded-md bg-[#050a21]'>
+            <img src={user.image} alt='user-image' className='w-20 md:w-40 p-1 bg-gray-500 border border-white outline-primary rounded-full' />
             <div className='w-full flex flex-col gap-3 mt-3'>
               <div className='flex items-center justify-between'>
                 <p className='text-gray-100 mb-1'>Username: {user.username}</p>

@@ -26,7 +26,6 @@ const MyOrders = () => {
     getOrders();
   }, []);
 
-  console.log(orders);
 
   // Order Payment Handler
   const orderPaymentHandler = async (orderId, items) => {

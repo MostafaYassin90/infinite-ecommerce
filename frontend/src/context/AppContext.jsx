@@ -108,7 +108,6 @@ const AppContextProvider = (props) => {
         headers: { authorization: "Bearer " + token }
       });
       if (response.data.success) {
-        console.log(response);
         toast.success(response.data.message);
       } else {
         console.log(response);

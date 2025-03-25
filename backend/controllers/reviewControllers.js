@@ -93,7 +93,7 @@ const deleteReview = async (req, res) => {
 
 // -------------- Delete Review FrontEnd --------------
 const deleteReviewFrontEnd = async (req, res) => {
-  const { userDetails, reviewId } = await req.body;
+  const { userDetails, reviewId, orderId } = await req.body;
   const review = await ReviewModel.findById(reviewId);
   if (review && userDetails.id === review.userId) {
     await ReviewModel.findByIdAndDelete(reviewId);

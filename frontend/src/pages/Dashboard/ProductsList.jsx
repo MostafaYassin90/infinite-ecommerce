@@ -18,6 +18,7 @@ const ProductsList = () => {
       if (response.data.success) {
         toast.success(response.data.message);
         getAllProducts();
+        getAllProductsDashboard();
       }
     } catch (error) {
       console.log(error);
@@ -46,7 +47,7 @@ const ProductsList = () => {
       {/* Body */}
       <div className="flex flex-col gap-2">
         {
-          allProductsDashboard.map((product, index) => (
+          allProductsDashboard.reverse().map((product, index) => (
             <div key={index} className="grid gap-3 sm:grid-cols-[0.5fr_1fr_2fr_1fr_1fr_1fr_0.5fr] items-center border border-gray-200 rounded-md py-2 px-2 bg-gray-50 text-sm font-semibold mb-2">
               <p>{index + 1}</p>
               <p><img src={product.images[0]} alt="product-image" className="w-20" /></p>

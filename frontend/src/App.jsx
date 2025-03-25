@@ -63,7 +63,7 @@ const App = () => {
         <Route path='/my-profile' element={<MyProfile />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
-        <Route path='/verfiy' element={<Verify />} />
+        <Route path='/verify' element={<Verify />} />
 
         <Route path='/dashboard' element={<Dashboard />}>
           <Route path='/dashboard' element={<Details />} />
